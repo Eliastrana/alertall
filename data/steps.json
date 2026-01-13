@@ -1,0 +1,197 @@
+{
+  "project": {
+    "title": "Demokratisert ekstremvær-risiko",
+    "tagline": "Koordinat → risiko → kart + forklaring + usikkerhet",
+    "timeframe": "16 måneder",
+    "hazards": ["Flom", "Skogbrann", "Hete"]
+  },
+  "steps": [
+    {
+      "id": "step-0",
+      "title": "Avklare mål og rammer",
+      "goal": "Bestem hva løsningen skal svare på for brukeren: hvilke typer ekstremvær, hvor i Europa, og hvor langt frem i tid vi skal kunne si noe om risiko.",
+      "deliverables": [
+        "En tydelig definisjon av hva brukeren får som svar (risiko per type ekstremvær + enkel forklaring + usikkerhet)",
+        "Avgrensning av område (f.eks. Europa) og tidshorisont (f.eks. 1–30 dager frem i tid)"
+      ],
+      "status": "done",
+      "progress": 100
+    },
+    {
+      "id": "step-1",
+      "title": "Planlegge hvordan hele systemet skal henge sammen",
+      "goal": "Lag en helhetlig plan for hvordan data blir hentet inn, hvordan risiko blir beregnet, og hvordan resultatet skal kunne vises raskt til brukeren.",
+      "deliverables": [
+        "En tydelig oversikt over hva som skjer i bakgrunnen (datainnhenting, modellering, kartproduksjon)",
+        "En plan for hvordan brukeren kan spørre om risiko for en posisjon og få svar umiddelbart"
+      ],
+      "status": "in_progress",
+      "progress": 40
+    },
+    {
+      "id": "step-2",
+      "title": "Etablere et felles kartgrunnlag",
+      "goal": "Velg en måte å dele inn kartet på slik at risiko kan beregnes og vises på en stabil og sammenlignbar måte over tid og sted.",
+      "deliverables": [
+        "En standard for hvordan områder deles inn (f.eks. ruter på kartet)",
+        "Regler for hvordan en brukerposisjon kobles til riktig område i kartet"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-3",
+      "title": "Samle og rydde relevante data",
+      "goal": "Hent inn og klargjør klima-, vær-, miljø- og satellittdata som er nødvendig for å vurdere risiko for flom, brann og hete.",
+      "deliverables": [
+        "Et samlet datasett der ulike kilder passer sammen i tid og sted",
+        "Kvalitetssjekk og dokumentasjon av datakilder, hull og begrensninger"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-4",
+      "title": "Organisere data slik at det er lett å bruke",
+      "goal": "Strukturer data på en måte som gjør det enkelt å slå opp historikk, nåsituasjon og prognoser for et gitt område.",
+      "deliverables": [
+        "En oversiktlig datastruktur for sted, tid og relevante variabler",
+        "En tydelig kobling mellom historiske data og fremtidige prognoser"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-5",
+      "title": "Definere hva som regnes som en ekstremhendelse",
+      "goal": "Lag klare kriterier for hva som teller som flom, skogbrann og hete, basert på tilgjengelige hendelsesdata og faglige terskler.",
+      "deliverables": [
+        "En felles definisjon av ekstremhendelser per type risiko",
+        "Et “fasit”-grunnlag (hendelser) som kan brukes til å lære opp og teste modellen"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-6",
+      "title": "Bygge første risikomodeller (enkel baseline)",
+      "goal": "Lag en første modell som gir risikoestimat og som er lett å forstå, slik at vi får et godt utgangspunkt for videre forbedring.",
+      "deliverables": [
+        "Første fungerende risikomodeller per ekstremværtype",
+        "Enkle forklaringer på hvilke faktorer som påvirker risiko mest"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-7",
+      "title": "Forbedre modellene for tid og sted",
+      "goal": "Utvikle mer robuste modeller som bedre fanger mønstre over tid og geografi, slik at risikoen blir mer presis og stabil.",
+      "deliverables": [
+        "Mer avanserte risikomodeller som utnytter informasjon i nærområder og over tid",
+        "Sammenligning mot baseline for å se faktisk forbedring"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-8",
+      "title": "Bruke værprognoser og vise usikkerhet",
+      "goal": "Koble inn værmeldinger/prognoser som input og sørg for at systemet også kan si hvor sikkert eller usikkert et risikosvar er.",
+      "deliverables": [
+        "Risikovurdering fram i tid basert på prognoser (f.eks. 1–30 dager)",
+        "Et tydelig mål for usikkerhet som kan vises til brukeren"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-9",
+      "title": "Sikre at risikoprosentene er pålitelige",
+      "goal": "Sørg for at når systemet sier f.eks. 70% risiko, så betyr det noe reelt og ikke bare er et tall modellen “føler”.",
+      "deliverables": [
+        "Kontroll av hvor godt risikotallene stemmer med virkelige hendelser",
+        "Justering av modellene slik at risikotallene blir mer troverdige"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-10",
+      "title": "Teste at modellen fungerer i nye områder og perioder",
+      "goal": "Undersøk om modellen generaliserer: fungerer den også når den møter nye steder og nye år, ikke bare data den har “sett før”.",
+      "deliverables": [
+        "Testoppsett som etterligner virkelige situasjoner (nye regioner/tidsperioder)",
+        "Mål på treffsikkerhet og robusthet over tid"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-11",
+      "title": "Lage risikokart for store områder",
+      "goal": "Kjør modellen over hele kartområdet slik at vi kan lage kartlag som viser hvor risikoen er høy, og hvordan den endrer seg fram i tid.",
+      "deliverables": [
+        "Risikokart per ekstremværtype og tidsperiode",
+        "Kart som også viser usikkerhet (der det er relevant)"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-12",
+      "title": "Gjøre kartene raske og brukervennlige",
+      "goal": "Optimaliser kartdata slik at de kan lastes raskt og brukes interaktivt, uten at brukeren må vente.",
+      "deliverables": [
+        "En effektiv måte å lagre og servere kartlag på",
+        "En tidsstruktur slik at kart kan vises for ulike datoer/perioder"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-13",
+      "title": "Lage en enkel “spør og få svar”-tjeneste",
+      "goal": "Bygg et grensesnitt der man kan oppgi et sted og få risikosvar for ulike typer ekstremvær.",
+      "deliverables": [
+        "Et API/endepunkt for risikospørring basert på koordinat og tid fram i tid",
+        "Et standardisert svar: risiko per type + enkel forklaring + usikkerhet"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-14",
+      "title": "Bygge en brukeropplevelse som gjør risiko lett å forstå",
+      "goal": "Lag en nettside der brukeren kan se kart, velge type risiko, bruke tidslinje og sjekke sin egen posisjon.",
+      "deliverables": [
+        "Interaktivt kart med lag (flom/brann/hete) og tidsstyring",
+        "En “min posisjon”-visning med tydelig risikokort og forklaring"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-15",
+      "title": "Formidle resultatene ansvarlig",
+      "goal": "Sørg for at løsningen ikke skaper falsk trygghet eller unødvendig frykt: vis begrensninger, usikkerhet og hva dette systemet ikke kan garantere.",
+      "deliverables": [
+        "Tydelige forbehold og begrensninger i løsning og tekst",
+        "Usikkerhet synlig for brukeren, sammen med forklaringer på hva den betyr"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-16",
+      "title": "Utvidelser og videreutvikling",
+      "goal": "Legg til flere forbedringer etter at kjernen fungerer, f.eks. mer detaljerte risikomodeller eller kobling til samfunnseffekter.",
+      "deliverables": [
+        "Hete som fullverdig del av systemet (dersom ikke ferdig tidligere)",
+        "Valgfritt: vise ekstra informasjon om hva risiko kan bety for mennesker og infrastruktur"
+      ],
+      "status": "todo",
+      "progress": 0
+    }
+  ]
+}

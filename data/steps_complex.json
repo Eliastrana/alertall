@@ -1,0 +1,200 @@
+{
+  "project": {
+    "title": "Demokratisert ekstremvær-risiko",
+    "tagline": "Koordinat → multi-risiko → kart + forklaringer + usikkerhet",
+    "timeframe": "16 måneder",
+    "hazards": ["Flom", "Skogbrann", "Hete"]
+  },
+  "steps": [
+    {
+      "id": "step-0",
+      "title": "Avgrensning og mål",
+      "goal": "Definer hva systemet skal svare på (hazard risk, ikke impact), hvilke trusler og horizon.",
+      "deliverables": [
+        "Definert output: risiko per hazard + kategori + usikkerhet + forklaring",
+        "Definert geografi (Europa med progressive coverage) og horizon (1–30 dager)"
+      ],
+      "status": "done",
+      "progress": 100
+    },
+    {
+      "id": "step-1",
+      "title": "Systemarkitektur (batch + online)",
+      "goal": "Design en arkitektur som støtter både raske risikokart og punktspørringer.",
+      "deliverables": [
+        "Batch: ingestion → feature store → trening → risk maps → tiles/raster store",
+        "Online: API (lat/lon+horizon) → inferens → risiko+usikkerhet+XAI"
+      ],
+      "status": "in_progress",
+      "progress": 40
+    },
+    {
+      "id": "step-2",
+      "title": "Romlig grid / world representation",
+      "goal": "Velg felles grid (1–5 km) og tidsoppløsning (daglig/6t).",
+      "deliverables": [
+        "Grid-definisjon og snapping-strategi for koordinater",
+        "Standard for reprojisering/resampling"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-3",
+      "title": "Datainnhenting og harmonisering",
+      "goal": "Bygg robust ingest for reanalyse, satellitt, statisk geo, hendelser og forecast.",
+      "deliverables": [
+        "Pipeline for ERA5 + satellitt + DEM/landcover/elver + hendelsesregistre + forecast",
+        "Kvalitetssjekk, maskering og metadata"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-4",
+      "title": "Feature store (konkret datastruktur)",
+      "goal": "Lag konsistente tabeller for statisk, state, forecast og labels.",
+      "deliverables": [
+        "grid_cells (statisk)",
+        "cell_daily_state (historikk/tilstand)",
+        "cell_forecast (init_date + lead_days)",
+        "labels_events (fasit per hazard)"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-5",
+      "title": "Labeling: definere ekstremhendelser",
+      "goal": "Lag labels (0/1 eller ordinal) per hazard per celle og tid.",
+      "deliverables": [
+        "Flom-labeler: rapporter + proxy/weak supervision ved behov",
+        "Brann-labeler: satellittbrann/perimeter/aktiv brann",
+        "(Senere) hetebølge: terskel/percentil + persistens"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-6",
+      "title": "Modell A: Gradient Boosting baseline + forklarbarhet",
+      "goal": "Tren LightGBM/XGBoost per hazard med sterke features og SHAP.",
+      "deliverables": [
+        "Baseline-modeller per hazard",
+        "SHAP-forklaringer per prediksjon (top drivere)"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-7",
+      "title": "Modell B: Spatio-temporal deep learning",
+      "goal": "Lær rom+tidsmønstre med ConvLSTM/Transformer på patches.",
+      "deliverables": [
+        "Patch-baserte inputs (f.eks. 32×32 over tid)",
+        "ConvLSTM/Transformer-modell som predikerer risiko for midtpiksel/patch"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-8",
+      "title": "Forecast som input + usikkerhet",
+      "goal": "Bruk forecast (helst ensemble) for å produsere risikodistribusjon og usikkerhet.",
+      "deliverables": [
+        "Forecast features (p10/p50/p90) eller medlemsvise prediksjoner",
+        "Usikkerhetsmål (spredning/CI) per hazard"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-9",
+      "title": "Kalibrering (kritisk for “trygg?”)",
+      "goal": "Sørg for pålitelige sannsynligheter via kalibrering og reliability-måling.",
+      "deliverables": [
+        "Brier score / ECE / reliability plots",
+        "Isotonic/Platt-kalibrering per hazard og evt. leadtime"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-10",
+      "title": "Evaluering i rom og tid (ingen leakage)",
+      "goal": "Test generalisering via blokkert CV og event/region holdout.",
+      "deliverables": [
+        "Block cross-validation (space+time)",
+        "Metrics: PR-AUC, AUROC, Brier, ECE, lead time vs skill"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-11",
+      "title": "Risk map generator (precomputed tiles)",
+      "goal": "Kjør modellen over hele gridet for lead 1..30 og lag kartlag.",
+      "deliverables": [
+        "Risikoraster per hazard og leadtime",
+        "Usikkerhetsraster per hazard og leadtime"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-12",
+      "title": "Tile/raster store",
+      "goal": "Gjør kartlag tilgjengelig effektivt (COG/tiles).",
+      "deliverables": [
+        "COG (Cloud Optimized GeoTIFF) eller vector tiles",
+        "Time-index (init_date + lead_days)"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-13",
+      "title": "Online API: punktspørring (lat/lon → svar)",
+      "goal": "Gi hvem som helst et svar for sin koordinat og ønsket horizon.",
+      "deliverables": [
+        "API-endpoint: /api/risk?lat=...&lon=...&lead=...",
+        "Return: risiko per hazard + kategori + usikkerhet + topp-drivere"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-14",
+      "title": "Frontend: demokratisert tilgang",
+      "goal": "Lag UI som viser kart, tidslinje, hazard-toggle og “min posisjon”.",
+      "deliverables": [
+        "Kartmodus (lag per hazard + tidslinje + usikkerhet-toggle)",
+        "Min posisjon (risk card + forklaring)"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-15",
+      "title": "Ansvarlig formidling (etikk)",
+      "goal": "Kommuniser begrensninger, usikkerhet og at dette er en indikator.",
+      "deliverables": [
+        "Tydelige disclaimers og begrensninger",
+        "Vis alltid usikkerhet og kildehenvisning der mulig"
+      ],
+      "status": "todo",
+      "progress": 0
+    },
+    {
+      "id": "step-16",
+      "title": "Fase 4: utvidelser (hete + evt. impact)",
+      "goal": "Legg til hetebølge og eventuelt impact-lag (eksponering/infrastruktur).",
+      "deliverables": [
+        "Hete hazard #3",
+        "Valgfritt: impact-lag med befolkning/bygg/infrastruktur"
+      ],
+      "status": "todo",
+      "progress": 0
+    }
+  ]
+}
