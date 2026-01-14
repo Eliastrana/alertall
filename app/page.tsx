@@ -19,7 +19,7 @@ export default function HomePage() {
         </div>
 
         <h1 className="mt-6 text-4xl font-semibold tracking-tight md:text-6xl">
-          Demokratisert ekstremvær-risiko
+          Prosjekt Argus
         </h1>
 
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
