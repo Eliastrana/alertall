@@ -9,6 +9,8 @@ export default function HomePage() {
       {/* subtle background glow */}
   
       <div className="mx-auto max-w-5xl px-6 py-16">
+
+
         {/* badge */}
         <div className="inline-flex items-center gap-2 rounded-full bg-tint px-4 py-2 text-xs font-medium text-foreground shadow-soft">
 <span className="relative inline-flex h-2 w-2">
@@ -26,6 +28,24 @@ export default function HomePage() {
           Gjør det mulig for hvem som helst å sjekke om de er i en utsatt sone for
           flom, skogbrann og hetebølge.
         </p>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+
+          <Link
+              href="/map"
+              className="inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground shadow-soft transition hover:opacity-95 hover:shadow-lift"
+          >
+              Se kart
+          </Link>
+
+              <Link
+                  href="/check"
+                  className="inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground shadow-soft transition hover:opacity-95 hover:shadow-lift"
+              >
+                  Lokasjonssjekker
+              </Link>
+
+          </div>
 
         <Timeline />
 
@@ -77,6 +97,7 @@ export default function HomePage() {
           >
             Se prosjektstegene
           </Link>
+
         </div>
       </div>
     </main>
