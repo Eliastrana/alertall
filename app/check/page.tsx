@@ -6,9 +6,9 @@ import Link from "next/link";
 
 type HeatPoint = { lat: number; lon: number; risk: number };
 
-const TH_YELLOW = 0.10;
-const TH_ORANGE = 0.15;
-const TH_RED = 0.20;
+const TH_GREEN = 0.10;  // under dette: minimal
+const TH_YELLOW = 0.15; // >= dette: medium
+const TH_RED = 0.20;    // >= dette: high
 
 function clamp(n: number, min: number, max: number) {
     return Math.min(Math.max(n, min), max);
@@ -33,51 +33,79 @@ function nearestPoint(points: HeatPoint[], lat: number, lon: number) {
 }
 
 function levelFromRisk(risk: number) {
+    // HIGH (red)
     if (risk >= TH_RED)
         return {
             label: "Høy",
             desc: "Sterkt signal om forhøyet risiko",
-            dot: "bg-red-500",
-            wrap: "bg-red-500/12 ring-1 ring-red-500/25",
-            title: "text-red-200",
-            sub: "text-red-200/80",
-            chip: "bg-red-500/15 text-red-200 ring-1 ring-red-500/25",
-            panel: "bg-red-500/8",
+            dot: "bg-red-600 dark:bg-red-500",
+            wrap:
+                "bg-red-50 ring-1 ring-red-200 " +
+                "dark:bg-red-500/12 dark:ring-red-500/25",
+            title: "text-red-900 dark:text-red-200",
+            sub: "text-red-700 dark:text-red-200/80",
+            chip:
+                "bg-red-100 text-red-900 ring-1 ring-red-200 " +
+                "dark:bg-red-500/15 dark:text-red-200 dark:ring-red-500/25",
+            panel:
+                "bg-white/60 ring-1 ring-red-100 " +
+                "dark:bg-red-500/8 dark:ring-transparent",
         };
 
-    if (risk >= TH_ORANGE)
-        return {
-            label: "Middels",
-            desc: "Tydelig signal om forhøyet risiko",
-            dot: "bg-orange-500",
-            wrap: "bg-orange-500/12 ring-1 ring-orange-500/25",
-            title: "text-orange-200",
-            sub: "text-orange-200/80",
-            chip: "bg-orange-500/15 text-orange-200 ring-1 ring-orange-500/25",
-            panel: "bg-orange-500/8",
-        };
-
+    // MEDIUM (yellow)
     if (risk >= TH_YELLOW)
         return {
-            label: "Lav",
-            desc: "Noe signal om risiko i området",
-            dot: "bg-yellow-400",
-            wrap: "bg-yellow-400/12 ring-1 ring-yellow-400/25",
-            title: "text-yellow-200",
-            sub: "text-yellow-200/80",
-            chip: "bg-yellow-400/15 text-yellow-200 ring-1 ring-yellow-400/25",
-            panel: "bg-yellow-400/8",
+            label: "Middels",
+            desc: "Tydelig signal om risiko i området",
+            dot: "bg-yellow-500 dark:bg-yellow-400",
+            wrap:
+                "bg-yellow-50 ring-1 ring-yellow-200 " +
+                "dark:bg-yellow-400/12 dark:ring-yellow-400/25",
+            title: "text-yellow-950 dark:text-yellow-200",
+            sub: "text-yellow-800 dark:text-yellow-200/80",
+            chip:
+                "bg-yellow-100 text-yellow-950 ring-1 ring-yellow-200 " +
+                "dark:bg-yellow-400/15 dark:text-yellow-200 dark:ring-yellow-400/25",
+            panel:
+                "bg-white/60 ring-1 ring-yellow-100 " +
+                "dark:bg-yellow-400/8 dark:ring-transparent",
         };
 
+    // LOW (green)
+    if (risk >= TH_GREEN)
+        return {
+            label: "Lav",
+            desc: "Noe signal, men under høyere varselnivå",
+            dot: "bg-emerald-600 dark:bg-emerald-500",
+            wrap:
+                "bg-emerald-50 ring-1 ring-emerald-200 " +
+                "dark:bg-emerald-500/10 dark:ring-emerald-500/20",
+            title: "text-emerald-950 dark:text-emerald-200",
+            sub: "text-emerald-800 dark:text-emerald-200/80",
+            chip:
+                "bg-emerald-100 text-emerald-950 ring-1 ring-emerald-200 " +
+                "dark:bg-emerald-500/15 dark:text-emerald-200 dark:ring-emerald-500/25",
+            panel:
+                "bg-white/60 ring-1 ring-emerald-100 " +
+                "dark:bg-emerald-500/8 dark:ring-transparent",
+        };
+
+    // MINIMAL (neutral/gray)
     return {
         label: "Minimal",
         desc: "Under varselgrense",
-        dot: "bg-emerald-500",
-        wrap: "bg-emerald-500/10 ring-1 ring-emerald-500/20",
-        title: "text-emerald-200",
-        sub: "text-emerald-200/80",
-        chip: "bg-emerald-500/15 text-emerald-200 ring-1 ring-emerald-500/25",
-        panel: "bg-emerald-500/8",
+        dot: "bg-zinc-500 dark:bg-zinc-400",
+        wrap:
+            "bg-zinc-50 ring-1 ring-zinc-200 " +
+            "dark:bg-zinc-400/10 dark:ring-zinc-400/15",
+        title: "text-zinc-900 dark:text-zinc-200",
+        sub: "text-zinc-700 dark:text-zinc-200/70",
+        chip:
+            "bg-zinc-100 text-zinc-900 ring-1 ring-zinc-200 " +
+            "dark:bg-zinc-400/15 dark:text-zinc-200 dark:ring-zinc-400/20",
+        panel:
+            "bg-white/60 ring-1 ring-zinc-100 " +
+            "dark:bg-zinc-400/8 dark:ring-transparent",
     };
 }
 
