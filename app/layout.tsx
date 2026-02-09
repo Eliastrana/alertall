@@ -5,7 +5,7 @@ import LayoutPadding from "./components/LayoutPadding";
 
 export const metadata = {
     title: "Prosjekt Argus",
-    description: "Gjør det mulig for hvem som helst å sjekke om de er i en utsatt sone for flom, skogbrann og hetebølge.",
+    description: "Forbedre oversikten over kaskadeeffekter av naturkatastrofer i Norge ved å utvikle et system som kombinerer spatio-temporal maskinlæring med interaktive kartvisualiseringe.",
 };
 
 export default function RootLayout({

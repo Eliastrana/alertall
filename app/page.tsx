@@ -25,8 +25,7 @@ export default function HomePage() {
         </h1>
 
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
-          Gjør det mulig for hvem som helst å sjekke om de er i en utsatt sone for
-          flom, skogbrann og hetebølge.
+            Forbedre oversikten over kaskadeeffekter av naturkatastrofer i Norge ved å utvikle et system som kombinerer spatio-temporal maskinlæring med interaktive kartvisualiseringe.
         </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -38,12 +37,12 @@ export default function HomePage() {
               Se kart
           </Link>
 
-              <Link
-                  href="/check"
-                  className="inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground shadow-soft transition hover:opacity-95 hover:shadow-lift"
-              >
-                  Lokasjonssjekker
-              </Link>
+              {/*<Link*/}
+              {/*    href="/check"*/}
+              {/*    className="inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground shadow-soft transition hover:opacity-95 hover:shadow-lift"*/}
+              {/*>*/}
+              {/*    Lokasjonssjekker*/}
+              {/*</Link>*/}
 
           </div>
 
@@ -61,7 +60,7 @@ export default function HomePage() {
               <div className="text-xl font-semibold">Visjon</div>
             </div>
             <p className="mt-3 text-sm text-muted">
-              Forbedre og forenkle prosessen av å informere om ekstremvær. Fokus på områder med manglende infrastruktur.
+              Forbedre multi-trussel risikovurdering for naturkatastrofer i Norge, basert på spatio-temporale løsninger.
             </p>
           </div>
 
@@ -91,12 +90,12 @@ export default function HomePage() {
 
 
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <Link
-            href="/steps"
-            className="inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground shadow-soft transition hover:opacity-95 hover:shadow-lift"
-          >
-            Se prosjektstegene
-          </Link>
+          {/*<Link*/}
+          {/*  href="/steps"*/}
+          {/*  className="inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground shadow-soft transition hover:opacity-95 hover:shadow-lift"*/}
+          {/*>*/}
+          {/*  Se prosjektstegene*/}
+          {/*</Link>*/}
 
         </div>
       </div>

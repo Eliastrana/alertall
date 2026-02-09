@@ -7,10 +7,10 @@ import WarningAmberRoundedIcon from "@mui/icons-material/WarningAmberRounded";
 import MapRoundedIcon from "@mui/icons-material/MapRounded";
 
 const items = [
-  { title: "Koordinat", description: "Brukerposisjon hentes fra brukeren.", Icon: LocationOnRoundedIcon },
+  { title: "Innhenting", description: "Innhenting av nødvendig data.", Icon: LocationOnRoundedIcon },
   { title: "Prognose", description: "Værmelding for de neste 30 dagene hentes inn.", Icon: CalendarMonthRoundedIcon },
   { title: "Modell", description: "Spatio-temporal ML kombinerer historikk med tidsrelevant data.", Icon: PsychologyRoundedIcon },
-  { title: "Risiko + usikkerhet", description: "Kalibrert sannsynlighet beregnes per trusseltype.", Icon: WarningAmberRoundedIcon },
+  { title: "Risiko + usikkerhet", description: "Kalibrert sannsynlighet beregnes, sammensatt av flere trusler.", Icon: WarningAmberRoundedIcon },
   { title: "Visualisering", description: "Interaktivt kart med visualisering av trusler basert på type.", Icon: MapRoundedIcon },
 ];
 

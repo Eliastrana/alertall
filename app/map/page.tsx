@@ -93,7 +93,7 @@ export default function RiskMapPage() {
         mapInstance.current = map;
 
         map.on("load", async () => {
-            const res = await fetch("/heatmap.json");
+            const res = await fetch("/heatmap_not.json");
             const json = await res.json();
 
             const points = (json.data as HeatPoint[]) ?? [];
