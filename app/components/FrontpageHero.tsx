@@ -60,7 +60,7 @@ export default function FrontpageHero() {
         onLoadedData={handleVideoReady}
         onError={handleVideoReady}
       >
-        <source src="/frontpage.mp4" type="video/mp4" />
+        <source src="/frontpage_hd.mp4" type="video/mp4" />
       </video>
 
       <div className="absolute inset-0 bg-slate-950/40" />
