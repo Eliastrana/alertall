@@ -9,7 +9,11 @@ export default function HomePage() {
       <FrontpageHero />
 
       <section className="mx-auto max-w-5xl px-6 py-16">
+
+        <NewestPost />
+
         <Timeline />
+
 
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           <div className="rounded-2xl bg-card p-6 shadow-soft transition hover:shadow-lift">
@@ -42,8 +46,6 @@ export default function HomePage() {
             </p>
           </div>
         </div>
-
-        <NewestPost />
 
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
           {/*<Link*/}

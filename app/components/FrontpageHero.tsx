@@ -40,6 +40,14 @@ export default function FrontpageHero() {
     };
   }, [isVideoReady]);
 
+  useEffect(() => {
+    if (showIntro) {
+      return;
+    }
+
+    window.dispatchEvent(new Event("frontpage:reveal"));
+  }, [showIntro]);
+
   const handleVideoReady = () => {
     setIsVideoReady(true);
   };
@@ -73,7 +81,7 @@ export default function FrontpageHero() {
         ].join(" ")}
         aria-hidden="true"
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.25),transparent_32%),linear-gradient(180deg,rgba(2,6,23,0.94),rgba(2,6,23,0.82))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(2,6,23),rgb(3,7,18))]" />
         <div className="relative flex min-h-screen items-center justify-center px-6">
           <div
             className={[
@@ -81,18 +89,14 @@ export default function FrontpageHero() {
               showIntro ? "translate-y-0 opacity-100" : "-translate-y-6 opacity-0",
             ].join(" ")}
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-slate-100 backdrop-blur-sm">
-              <span className="relative inline-flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-accent opacity-70 animate-ping" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-              </span>
-              Laster startside
+            {/*<h1 className="mt-6 text-4xl font-semibold tracking-tight md:text-6xl">*/}
+            {/*  Prosjekt Argus*/}
+            {/*</h1>*/}
+            <div className="mx-auto mt-8 w-64 max-w-full rounded-full border border-white/10 bg-white/5 p-1 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
+              <div className="loading-bar-track h-2 rounded-full bg-white/10">
+                <div className="loading-bar-fill h-full rounded-full bg-[linear-gradient(90deg,rgba(16,185,129,0.55),rgba(110,231,183,0.95),rgba(16,185,129,0.55))]" />
+              </div>
             </div>
-            <h1 className="mt-6 text-4xl font-semibold tracking-tight md:text-6xl">
-              Prosjekt Argus
-            </h1>
-            <p className="mt-4 text-sm text-slate-200 md:text-base">
-            </p>
           </div>
         </div>
       </div>
