@@ -25,13 +25,11 @@ export default function NewestPost() {
       </div>
 
       <div className="mt-4 grid gap-4 md:grid-cols-3">
-        {/* Primary (big) */}
-        <div className="md:col-span-2">
+        <div className="md:col-span-3">
           <BlogCard post={primary} />
         </div>
 
-        {/* Secondary (small) */}
-        <div className="grid gap-4">
+        <div className="md:col-span-3 grid gap-4 md:grid-cols-2">
           {others.map((p) => (
             <SmallBlogCard key={p.slug} post={p} />
           ))}
@@ -53,16 +51,11 @@ function SmallBlogCard({ post }: { post: any }) {
   return (
     <Link
       href={`/blog/${slug}`}
-      className="block rounded-2xl bg-card p-4 shadow-soft transition hover:shadow-lift"
+      className="block rounded-2xl bg-card p-4 shadow-soft transition hover:shadow-lift "
     >
-      <div className="flex items-start justify-between gap-3">
-        <div>
-          <h3 className="text-sm font-semibold leading-snug">{frontmatter.title}</h3>
-          <p className="mt-1 text-xs text-muted">{date}</p>
-        </div>
-        <span className="rounded-full bg-tint px-2 py-1 text-[10px] font-semibold">
-          Ny
-        </span>
+      <div>
+        <h3 className="text-sm font-semibold leading-snug">{frontmatter.title}</h3>
+        <p className="mt-1 text-xs text-muted">{date}</p>
       </div>
 
       {frontmatter.excerpt && (

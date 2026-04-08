@@ -107,30 +107,32 @@ export default function FrontpageHero() {
           showIntro ? "translate-y-6 opacity-0" : "translate-y-0 opacity-100",
         ].join(" ")}
       >
-        <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/12 px-4 py-2 text-xs font-medium text-white shadow-soft ring-1 ring-white/15 backdrop-blur-sm">
-            <span className="relative inline-flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-accent opacity-60 animate-ping" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-            </span>
-            Masterprosjekt • 12. januar 2026 – 18. mai 2027
+        <div className="md:flex md:items-end md:justify-between md:gap-10">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/12 px-4 py-2 text-xs font-medium text-white shadow-soft ring-1 ring-white/15 backdrop-blur-sm">
+              <span className="relative inline-flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-accent opacity-60 animate-ping" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+              </span>
+              Masterprosjekt • 12. januar 2026 – 18. mai 2027
+            </div>
+
+            <h1 className="mt-6 text-4xl font-semibold tracking-tight text-white md:text-6xl">
+              Prosjekt Argus
+            </h1>
+
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-200 md:text-lg">
+              Forbedre oversikten over kaskadeeffekter av naturkatastrofer i Norge ved å utvikle et system som kombinerer spatio-temporal maskinlæring med interaktive kartvisualiseringer.
+            </p>
           </div>
 
-          <h1 className="mt-6 text-4xl font-semibold tracking-tight text-white md:text-6xl">
-            Prosjekt Argus
-          </h1>
-
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-200 md:text-lg">
-            Forbedre oversikten over kaskadeeffekter av naturkatastrofer i Norge ved å utvikle et system som kombinerer spatio-temporal maskinlæring med interaktive kartvisualiseringer.
-          </p>
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Link
-              href="/map"
-              className="inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground shadow-soft transition hover:opacity-95 hover:shadow-lift"
-            >
-              Se kart
-            </Link>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center md:mt-0 md:flex-shrink-0 md:self-end">
+            {/*<Link*/}
+            {/*  href="/map"*/}
+            {/*  className="inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-accent-foreground shadow-soft transition hover:opacity-95 hover:shadow-lift"*/}
+            {/*>*/}
+            {/*  Se kart*/}
+            {/*</Link>*/}
 
             {/*<Link*/}
             {/*    href="/check"*/}

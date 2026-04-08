@@ -2,6 +2,7 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import LayoutPadding from "./components/LayoutPadding";
+import Footer from "./components/Footer";
 
 export const metadata = {
     title: "Prosjekt Argus",
@@ -20,6 +21,7 @@ export default function RootLayout({
         <LayoutPadding>
             {children}
         </LayoutPadding>
+        <Footer />
         </body>
         </html>
     );

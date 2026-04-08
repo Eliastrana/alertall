@@ -12,40 +12,40 @@ export default function HomePage() {
 
         <NewestPost />
 
-        <Timeline />
+        {/*<Timeline />*/}
 
 
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
-          <div className="rounded-2xl bg-card p-6 shadow-soft transition hover:shadow-lift">
-            <div className="flex items-center gap-3">
-              <span className="h-2 w-10 rounded-full bg-accent" />
-              <div className="text-xl font-semibold">Visjon</div>
-            </div>
-            <p className="mt-3 text-sm text-muted">
-              Forbedre multi-trussel risikovurdering for naturkatastrofer i Norge, basert på spatio-temporale løsninger.
-            </p>
-          </div>
+        {/*<div className="mt-10 grid gap-4 md:grid-cols-3">*/}
+        {/*  <div className="rounded-2xl bg-card p-6 shadow-soft transition hover:shadow-lift">*/}
+        {/*    <div className="flex items-center gap-3">*/}
+        {/*      <span className="h-2 w-10 rounded-full bg-accent" />*/}
+        {/*      <div className="text-xl font-semibold">Visjon</div>*/}
+        {/*    </div>*/}
+        {/*    <p className="mt-3 text-sm text-muted">*/}
+        {/*      Forbedre multi-trussel risikovurdering for naturkatastrofer i Norge, basert på spatio-temporale løsninger.*/}
+        {/*    </p>*/}
+        {/*  </div>*/}
 
-          <div className="rounded-2xl bg-card p-6 shadow-soft transition hover:shadow-lift">
-            <div className="flex items-center gap-3">
-              <span className="h-2 w-10 rounded-full bg-accent" />
-              <div className="text-xl font-semibold">Output</div>
-            </div>
-            <p className="mt-3 text-sm text-muted">
-              Risiko per trussel, lav/middels/høy, usikkerhet for valgt koordinat, og tidsrom.
-            </p>
-          </div>
+        {/*  <div className="rounded-2xl bg-card p-6 shadow-soft transition hover:shadow-lift">*/}
+        {/*    <div className="flex items-center gap-3">*/}
+        {/*      <span className="h-2 w-10 rounded-full bg-accent" />*/}
+        {/*      <div className="text-xl font-semibold">Output</div>*/}
+        {/*    </div>*/}
+        {/*    <p className="mt-3 text-sm text-muted">*/}
+        {/*      Risiko per trussel, lav/middels/høy, usikkerhet for valgt koordinat, og tidsrom.*/}
+        {/*    </p>*/}
+        {/*  </div>*/}
 
-          <div className="rounded-2xl bg-card p-6 shadow-soft transition hover:shadow-lift">
-            <div className="flex items-center gap-3">
-              <span className="h-2 w-10 rounded-full bg-accent" />
-              <div className="text-xl font-semibold">Leveranse</div>
-            </div>
-            <p className="mt-3 text-sm text-muted">
-              Precomputed risikokart + API for punktspørringer. Enkelt input, enkelt output.
-            </p>
-          </div>
-        </div>
+        {/*  <div className="rounded-2xl bg-card p-6 shadow-soft transition hover:shadow-lift">*/}
+        {/*    <div className="flex items-center gap-3">*/}
+        {/*      <span className="h-2 w-10 rounded-full bg-accent" />*/}
+        {/*      <div className="text-xl font-semibold">Leveranse</div>*/}
+        {/*    </div>*/}
+        {/*    <p className="mt-3 text-sm text-muted">*/}
+        {/*      Precomputed risikokart + API for punktspørringer. Enkelt input, enkelt output.*/}
+        {/*    </p>*/}
+        {/*  </div>*/}
+        {/*</div>*/}
 
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
           {/*<Link*/}
