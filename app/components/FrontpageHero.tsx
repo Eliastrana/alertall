@@ -71,7 +71,6 @@ export default function FrontpageHero() {
         <source src="/frontpage_hd.mp4" type="video/mp4" />
       </video>
 
-      <div className="absolute inset-0 bg-slate-950/40" />
       {/*<div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.18)_0%,rgba(2,6,23,0.42)_50%,rgba(2,6,23,0.84)_100%)] md:bg-[radial-gradient(circle_at_bottom_left,rgba(15,23,42,0.1),rgba(15,23,42,0.45)_38%,rgba(2,6,23,0.9)_76%)]" />*/}
 
       <div
@@ -81,7 +80,7 @@ export default function FrontpageHero() {
         ].join(" ")}
         aria-hidden="true"
       >
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(2,6,23),rgb(3,7,18))]" />
+        <div className="absolute inset-0 bg-neutral-950" />
         <div className="relative flex min-h-screen items-center justify-center px-6">
           <div
             className={[
