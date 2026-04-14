@@ -13,7 +13,7 @@ export default function RelevantPapers() {
       <div className="flex items-end justify-between gap-4">
         <div>
           <h2 className="text-lg font-semibold">Relevant Papers</h2>
-          <p className="mt-1 text-sm text-muted">Fem nyeste referanser fra prosjektets BibTeX-liste.</p>
+          <p className="mt-1 text-sm text-muted">Referanser fra prosjektets BibTeX-liste.</p>
         </div>
 
         <Link
